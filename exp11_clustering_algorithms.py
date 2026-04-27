@@ -15,8 +15,7 @@ agglo = AgglomerativeClustering(n_clusters=3)
 kmeans_labels = kmeans.fit_predict(X)
 print("\nKMeans:")
 print("Accuracy:", accuracy_score(y, kmeans_labels), 4)
-print("Precision:", precision_score(y, kmeans_labels, average='macro'))
-print("Recall:", recall_score(y, kmeans_labels, average='macro'))
+
 
 agglo_labels = agglo.fit_predict(X)
 print("\nAgglomerative:")
