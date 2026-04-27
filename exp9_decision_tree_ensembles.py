@@ -14,17 +14,21 @@ for c in ['Glucose', 'BloodPressure', 'BMI']:
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-print(f"{'Model':<25} {'Accuracy':<10}")
+print("Model,Accuracy")
 
 for d in [3, 5, None]:
-    dt = DecisionTreeClassifier(max_depth=d, random_state=42)
+    dt = DecisionTreeClassifier(max_depth=d)
     dt.fit(X_train, y_train)
     acc = accuracy_score(y_test, dt.predict(X_test))
-    print(f"Decision Tree (depth={d})  {acc:.4f}")
+    print(f"Decision Tree (depth={d})  {acc}")
 
-rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, y_train)
-print(f"Random Forest            {accuracy_score(y_test, rf.predict(X_test)):.4f}")
+print(f"Random Forest            {accuracy_score(y_test, rf.predict(X_test))}")
+
+
+
+
 
 bag = BaggingClassifier(estimator=DecisionTreeClassifier(random_state=42), n_estimators=50, random_state=42)
 bag.fit(X_train, y_train)
