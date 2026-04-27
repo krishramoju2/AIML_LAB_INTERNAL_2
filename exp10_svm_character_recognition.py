@@ -2,7 +2,7 @@ from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score
 
 digits = load_digits()
 X = digits.images.reshape(len(digits.images), -1)
@@ -19,9 +19,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 acc = accuracy_score(y_test, y_pred)
-prec = precision_score(y_test, y_pred, average='macro')
-rec = recall_score(y_test, y_pred, average='macro')
+
 
 print(f"Accuracy:  {acc}")
-print(f"Precision: {prec}")
-print(f"Recall:    {rec}")
+
