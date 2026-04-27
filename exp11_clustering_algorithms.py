@@ -1,6 +1,4 @@
-print("="*50)
-print("Experiment 11: Clustering Algorithms")
-print("="*50)
+
 
 from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
