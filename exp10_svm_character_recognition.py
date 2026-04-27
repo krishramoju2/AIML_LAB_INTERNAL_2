@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 digits = load_digits()
-X = digits.images.reshape(len(digits.images), -1)
+X = digits.data
 y = digits.target
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
