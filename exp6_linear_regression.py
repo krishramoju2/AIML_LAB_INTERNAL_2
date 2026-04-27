@@ -11,7 +11,7 @@ y = data['Outcome']
 for col in ['Glucose', 'BloodPressure', 'BMI']:
     X[col] = X[col].replace(0, X[col].mean())
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 poly = PolynomialFeatures(degree=2)
 X_train_poly = poly.fit_transform(X_train)
