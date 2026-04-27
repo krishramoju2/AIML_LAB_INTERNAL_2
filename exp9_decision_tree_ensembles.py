@@ -30,15 +30,14 @@ print(f"Random Forest            {accuracy_score(y_test, rf.predict(X_test))}")
 
 
 
-bag = BaggingClassifier(DecisionTreeClassifier(), n_estimators=50)
+bag = BaggingClassifier()
 bag.fit(X_train, y_train)
-print("Bagging", accuracy_score(y_test, bag.predict(X_test)))
+print("Bagging", round(accuracy_score(y_test, bag.predict(X_test)), 4))
 
-ada = AdaBoostClassifier(n_estimators=50)
+ada = AdaBoostClassifier()
 ada.fit(X_train, y_train)
-print("AdaBoost", accuracy_score(y_test, ada.predict(X_test))
+print("AdaBoost", round(accuracy_score(y_test, ada.predict(X_test)), 4))
 
-base = [('dt', DecisionTreeClassifier()), ('rf', RandomForestClassifier(50))]
-stack = StackingClassifier(base, LogisticRegression())
+stack = StackingClassifier([('dt', DecisionTreeClassifier()), ('rf', RandomForestClassifier())])
 stack.fit(X_train, y_train)
-print("Stacking", accuracy_score(y_test, stack.predict(X_test)))
+print("Stacking", round(accuracy_score(y_test, stack.predict(X_test)), 4))
