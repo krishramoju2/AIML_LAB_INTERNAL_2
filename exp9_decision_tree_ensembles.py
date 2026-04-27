@@ -22,7 +22,7 @@ for d in [3, 5, None]:
     acc = accuracy_score(y_test, dt.predict(X_test))
     print(f"Decision Tree (depth={d})  {acc}")
 
-rf = RandomForestClassifier(n_estimators=100)
+rf = RandomForestClassifier()
 rf.fit(X_train, y_train)
 print(f"Random Forest            {accuracy_score(y_test, rf.predict(X_test))}")
 
