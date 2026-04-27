@@ -19,9 +19,9 @@ X_test_poly = poly.transform(X_test)
 
 models = [
     ('Least Squares', LinearRegression(), False),
-    ('Gradient Descent', SGDRegressor(max_iter=1000), False),
-    ('Ridge', Ridge(alpha=1.0), False),
-    ('LASSO', Lasso(alpha=0.01), False),
+    ('Gradient Descent', SGDRegressor(), False),
+    ('Ridge', Ridge(), False),
+    ('LASSO', Lasso(), False),
     ('Polynomial', LinearRegression(), True)
 ]
 
