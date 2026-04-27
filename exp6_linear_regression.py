@@ -25,8 +25,7 @@ models = [
     ('Polynomial', LinearRegression(), True)
 ]
 
-print(f"{'Model':<20} {'MSE':<12} {'R2 Score':<10}")
-for name, model, use_poly in models:
+print("Model", "MSE", "R2 Score")for name, model, use_poly in models:
     if use_poly:
         model.fit(X_train_poly, y_train)
         preds = model.predict(X_test_poly)
@@ -36,4 +35,4 @@ for name, model, use_poly in models:
     
     mse_val = mean_squared_error(y_test, preds)
     r2_val = r2_score(y_test, preds)
-    print(f"{name:<20} {mse_val:<12.4f} {r2_val:<10.4f}")
+    print(f"{name} {mse_val} {r2_val}") 
