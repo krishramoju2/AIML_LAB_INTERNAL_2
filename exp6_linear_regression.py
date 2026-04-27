@@ -25,7 +25,8 @@ models = [
     ('Polynomial', LinearRegression(), True)
 ]
 
-print("Model", "MSE", "R2 Score")for name, model, use_poly in models:
+print("Model", "MSE", "R2 Score")
+for name, model, use_poly in models:
     if use_poly:
         model.fit(X_train_poly, y_train)
         preds = model.predict(X_test_poly)
