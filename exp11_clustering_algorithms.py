@@ -11,11 +11,14 @@ kmeans = KMeans(n_clusters=3)
 agglo = AgglomerativeClustering(n_clusters=3)
 dbscan = DBSCAN()
 
+print("kmeans")
 kmeans_labels = kmeans.fit_predict(X)
 print("Accuracy:", accuracy_score(y, kmeans_labels))
 
+print("agglo")
 agglo_labels = agglo.fit_predict(X)
 print("Accuracy:", accuracy_score(y, agglo_labels))
 
+print("dbscan")
 dbscan_labels = dbscan.fit_predict(X)
-print("Clusters found:", dbscan_labels)
+print("Accuracy:", accuracy_score(y, dbscan_labels))
